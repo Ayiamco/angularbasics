@@ -22,6 +22,10 @@ export class ApiService {
       catchError(this.handleError<any>())
     )
   }
+
+  getGithubUser(username:string):Observable<GithubUser>{
+    return this.http.get<GithubUser>(username)
+  }
   
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
