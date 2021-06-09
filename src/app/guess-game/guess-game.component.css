@@ -1,0 +1,9 @@
+.allowSubmit,
+.show-result {
+  display: block;
+}
+
+.disallowSubmit,
+.hide-result {
+  display: none;
+}

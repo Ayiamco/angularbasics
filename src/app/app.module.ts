@@ -6,11 +6,13 @@ import {AppRoutingModule} from "./app-routing-module";
 
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
+import { GuessGameComponent } from './guess-game/guess-game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
+    GuessGameComponent,
   ],
   imports: [
     BrowserModule,
