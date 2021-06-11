@@ -1,16 +1,16 @@
 <h1>Welcome to guess game</h1>
-<h3>Guess the sum between 0 and 27</h3>
+<h3>Guess a number between 0 and 27</h3>
 <div>
     <label for="players-guess">Your Guess: </label>
     <input id="players-guess" [(ngModel)]="playersGuess" min="0" max="27" placeholder="Enter your guess" type="range">
     <span>{{playersGuess}}</span>
-    <button (click)="validate()" class={{allowSubmitGuess}}>Submit Guess</button>
+    <button *ngIf="allowSubmitGuess"(click)="validate()">Submit Guess</button>
     <button (click)="generate()"> Retry</button>
     <p>You have answered {{correctGuess}} correctly out of {{totalGuess}} guesses</p>
 </div>
 
 <ul *ngIf="predictions">
-    <li *ngFor="let prediction in predictions">
-        {{prediction}}
+    <li *ngFor="let prediction of predictions" class={{prediction.status}}>
+        {{prediction.data}}
     </li>
 </ul>

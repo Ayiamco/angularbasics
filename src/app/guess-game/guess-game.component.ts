@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GuessData } from '../interfaces';
 import { MessageService } from '../message.service';
 
 @Component({
@@ -10,27 +11,30 @@ export class GuessGameComponent implements OnInit {
 
   playersGuess?:number;
   currentValue?:number;
-  totalGuess?:number;
+  totalGuess:number=0;
   correctGuess:number=0;
-  allowSubmitGuess:string="allowSubmit";
-  result:string="hide-result";
-  predictions?:string[];
+  allowSubmitGuess:boolean=true;
+  isCorrectGuess:boolean=false;
+  predictions:GuessData[]=[];
   generate(){
     var newNum=generateNumber();
     this.currentValue=newNum;
-    this.allowSubmitGuess="allowSubmit";
-    this.result="hide-result";
+    this.allowSubmitGuess=true;
   }
 
   validate(){
-    this.totalGuess==undefined ? this.totalGuess=0 : this.totalGuess++;
-    if(this.currentValue==this.playersGuess) this.correctGuess++;
-    this.allowSubmitGuess="disallowSubmit"; 
-    this.result="show-result";
-    this.messageService.add(
-      `Your guess was ${this.playersGuess} and the correct answer was ${this.currentValue}}`
-      );
-      this.predictions=this.messageService.messages;
+    if(this.currentValue==this.playersGuess){
+       this.correctGuess++;
+       this.isCorrectGuess=true
+    }
+    else this.isCorrectGuess=false;
+
+    this.totalGuess++;
+    this.allowSubmitGuess=false; 
+    this.predictions.push({
+        data:`Your guess was ${this.playersGuess} and the correct answer was ${this.currentValue}`,
+        status: this.isCorrectGuess? "guess-correct" : "guess-fail"
+      });
   }
   constructor(private messageService:MessageService) {  }
 

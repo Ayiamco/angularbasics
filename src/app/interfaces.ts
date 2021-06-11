@@ -18,3 +18,8 @@ export interface GithubUser{
     type: string,
     site_admin: boolean
 }
+
+export interface GuessData{
+    data:string,
+    status:string
+}

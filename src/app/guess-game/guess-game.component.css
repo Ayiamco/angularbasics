@@ -1,9 +1,6 @@
-.allowSubmit,
-.show-result {
-  display: block;
+.guess-correct {
+  color: green;
 }
-
-.disallowSubmit,
-.hide-result {
-  display: none;
+.guess-fail {
+  color: red;
 }
