@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IGithubUser } from '../interfaces/IGithubUser';
-import {ApiService} from "../services/api.service";
+import { IGithubUser } from '../../interfaces/IGithubUser';
+import {ApiService} from "../../services/api.service";
 
 @Component({
   selector: 'app-github',

@@ -5,8 +5,8 @@ import {FormsModule} from "@angular/forms"
 import {AppRoutingModule} from "./app-routing-module";
 
 import { AppComponent } from './app.component';
-import { GithubComponent } from './github/github.component';
-import { GuessGameComponent } from './guess-game/guess-game.component';
+import { GithubComponent } from './pages/github/github.component';
+import { GuessGameComponent } from './pages/guess-game/guess-game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 
