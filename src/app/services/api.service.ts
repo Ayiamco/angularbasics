@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from "@angular/common/http";
 import {Observable,of} from "rxjs";
 import {catchError} from "rxjs/operators";
-import { GithubUser } from './interfaces';
-
+import { IGithubUser } from '../interfaces/IGithubUser';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,15 +15,15 @@ export class ApiService {
   };
   constructor(private http:HttpClient) { }
 
-  getGithubUsers():Observable<GithubUser[]>{
+  getGithubUsers():Observable<IGithubUser[]>{
   
-    return this.http.get<GithubUser[]>(this.githubUrl).pipe(
+    return this.http.get<IGithubUser[]>(this.githubUrl).pipe(
       catchError(this.handleError<any>())
     )
   }
 
-  getGithubUser(username:string):Observable<GithubUser>{
-    return this.http.get<GithubUser>(username)
+  getGithubUser(username:string):Observable<IGithubUser>{
+    return this.http.get<IGithubUser>(username)
   }
   
   private handleError<T>(operation = 'operation', result?: T) {

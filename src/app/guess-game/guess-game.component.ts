@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GuessData } from '../interfaces';
-import { MessageService } from '../message.service';
+import { IGuessData } from '../interfaces/IGuessData';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-guessgame',
@@ -15,7 +15,7 @@ export class GuessGameComponent implements OnInit {
   correctGuess:number=0;
   allowSubmitGuess:boolean=true;
   isCorrectGuess:boolean=false;
-  predictions:GuessData[]=[];
+  predictions:IGuessData[]=[];
   generate(){
     var newNum=generateNumber();
     this.currentValue=newNum;

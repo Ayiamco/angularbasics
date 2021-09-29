@@ -7,6 +7,8 @@ import {AppRoutingModule} from "./app-routing-module";
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
 import { GuessGameComponent } from './guess-game/guess-game.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { GuessGameComponent } from './guess-game/guess-game.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

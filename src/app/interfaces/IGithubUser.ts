@@ -1,4 +1,4 @@
-export interface GithubUser{
+export interface IGithubUser{
     login: string,
     id: number,
     node_id: string,
@@ -17,9 +17,4 @@ export interface GithubUser{
     received_events_url: string,
     type: string,
     site_admin: boolean
-}
-
-export interface GuessData{
-    data:string,
-    status:string
 }

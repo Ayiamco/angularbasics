@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from "../api.service";
-import {GithubUser} from "../interfaces";
+import { IGithubUser } from '../interfaces/IGithubUser';
+import {ApiService} from "../services/api.service";
 
 @Component({
   selector: 'app-github',
@@ -10,7 +10,7 @@ import {GithubUser} from "../interfaces";
 export class GithubComponent implements OnInit {
 
   currentWindowSize?:number;
-  users?:GithubUser[];
+  users?:IGithubUser[];
   username?:string;
   constructor(private api:ApiService) { }
 
