@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms"
 import {AppRoutingModule} from "./app-routing-module";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
 import { GithubComponent } from './pages/github/github.component';
@@ -22,7 +23,8 @@ import { MaterialModule } from './shared/material.module';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
 
   ],
   providers: [],

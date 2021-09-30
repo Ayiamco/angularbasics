@@ -16,16 +16,15 @@ export class YoutubeFormComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
+    this.firstFormGroup=this._formBuilder.group({
+      firstCtrl:["",[Validators.required,Validators.minLength(10)]]
+    })
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
   }
 
   proceedToNext(stepper:MatStepper){
-    
-    stepper.next();
+    if(!this.firstFormGroup.invalid) stepper.next();
   }
 }

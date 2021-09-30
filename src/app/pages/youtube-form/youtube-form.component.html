@@ -1,15 +1,24 @@
   
   <div style="padding: 20px;">
       <mat-stepper  orientation="vertical" [linear]="isLinear" #stepper>
-        <mat-step [stepControl]="firstFormGroup" >
+        <mat-step [stepControl]="firstFormGroup" [editable]="false">
+            <ng-template matStepLabel>Fill out your name</ng-template>
             <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>Fill out your name</ng-template>
-                <mat-form-field appearance="fill">
-                    <mat-label>Name</mat-label>
-                    <input matInput placeholder="Last name, First name" 
-                        formControlName="firstCtrl" required>
-                </mat-form-field>
-                <div>
+                <mat-card>
+                    <div>
+                        <h4>What do you do after watching a video</h4>
+                        <p>25 Points</p>
+                    </div>
+                    
+                    <form [formGroup]="firstFormGroup">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Hint: Lk,Sre,Scrib</mat-label>
+                            <input matInput placeholder="Put your answer here" 
+                                formControlName="firstCtrl" required>
+                        </mat-form-field>
+                    </form>
+                </mat-card>
+                <div fxLayout="row" fxFlexFill fxLayoutAlign="end center" style="padding-top: 20px;">
                     <button mat-raised-button (click)="proceedToNext(stepper)">Next</button>
                 </div>
             </form>

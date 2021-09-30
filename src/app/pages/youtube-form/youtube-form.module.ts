@@ -4,6 +4,7 @@ import { YoutubeFormComponent } from './youtube-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { RouterModule,Routes } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 const routes:Routes=[
@@ -21,7 +22,8 @@ const routes:Routes=[
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FlexLayoutModule
   ]
 })
 export class YoutubeFormModule { }
