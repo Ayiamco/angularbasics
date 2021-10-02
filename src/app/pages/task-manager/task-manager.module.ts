@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ButtonComponent } from './components/button/button.component';
 
 
 
@@ -19,6 +20,7 @@ const routes:Routes=[
     FooterComponent,
     TaskManagerComponent,
     HeaderComponent,
+    ButtonComponent,
   ],
   imports: [
     CommonModule,
