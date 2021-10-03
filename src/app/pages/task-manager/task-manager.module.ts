@@ -6,6 +6,9 @@ import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ButtonComponent } from './components/button/button.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TaskItemComponent } from './components/task-item/task-item.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 
 
@@ -21,10 +24,13 @@ const routes:Routes=[
     TaskManagerComponent,
     HeaderComponent,
     ButtonComponent,
+    TaskItemComponent,
+    TasksComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FlexLayoutModule
   ]
 })
 export class TaskManagerModule { }
