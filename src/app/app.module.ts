@@ -10,6 +10,7 @@ import { GithubComponent } from './pages/github/github.component';
 import { GuessGameComponent } from './pages/guess-game/guess-game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MaterialModule } from './shared/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FontAwesomeModule
 
   ],
   providers: [],
