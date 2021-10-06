@@ -8,11 +8,16 @@ import { MockTasks } from '../mockData/mock-tasks';
   providedIn: 'root'
 })
 export class TaskService {
-
+  task=MockTasks
   jsonServerBaseUrl="localhost:5000"
   constructor(private httpClient:HttpClient) { }
 
   getTask():Observable<ITask[]>{
-    return this.httpClient.get<ITask[]>(`${this.jsonServerBaseUrl}/tasks`)
+    let task=of<ITask[]>(this.task)
+    return task;
+  }
+
+  addTask(newTask:ITask){
+    this.task.push(newTask)
   }
 }

@@ -18,4 +18,12 @@ export class TasksComponent implements OnInit {
     })
   }
 
+  addDummyTask(){
+    var dummyTask:ITask={text:"THIS IS IT",day:"29TH ",reminder:true}
+    this.taskService.addTask(dummyTask)
+    this.taskService.getTask().subscribe((resp)=>{
+      this.tasks=resp
+    })
+  }
+
 }
