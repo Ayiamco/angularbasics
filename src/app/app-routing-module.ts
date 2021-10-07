@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: ()=> import("./pages/youtube-form/youtube-form.module")
     .then(x=> x.YoutubeFormModule) 
   },
+  { 
+    path: 'smile', 
+    loadChildren: ()=> import("./pages/smile/smile.module")
+    .then(x=> x.SmileModule) 
+  },
   {
     path:'task-manager',
     loadChildren:()=> import('./pages/task-manager/task-manager.module')
