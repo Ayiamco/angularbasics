@@ -9,19 +9,31 @@ import { MockTasks } from '../mockData/mock-tasks';
 })
 export class TaskService {
   task=MockTasks
-  jsonServerBaseUrl="localhost:5000"
   constructor(private httpClient:HttpClient) { }
 
   getTasks():Observable<ITask[]>{
-    let task=of<ITask[]>(this.task)
-    return task;
+    let taskInStorage=localStorage.getItem("tasks")
+    if(!taskInStorage){
+      let task=of<ITask[]>(this.task)
+      return task;
+    }
+   else{
+    let taskObservable=of<ITask[]>(JSON.parse(taskInStorage))
+     return taskObservable;
+   }
   }
 
   addTask(newTask:ITask){
     this.task.push(newTask)
+    localStorage.setItem("tasks",JSON.stringify(this.task))
   }
 
   deleteTask(task:ITask){
     this.task=this.task.filter(x=> x.id != task.id)
+    localStorage.setItem("tasks",JSON.stringify(this.task))
+  }
+  toggleTaskReminder(id:Number){
+    this.task.forEach(x=>{ if(x.id==id) x.reminder= !x.reminder})
+    localStorage.setItem("tasks",JSON.stringify(this.task))
   }
 }

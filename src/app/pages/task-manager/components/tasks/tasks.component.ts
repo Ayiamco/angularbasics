@@ -31,4 +31,9 @@ export class TasksComponent implements OnInit {
     this.taskService.getTasks().subscribe((resp)=> this.tasks=resp)
   }
 
+  handleToggleEvent(task:ITask){
+    this.taskService.toggleTaskReminder(task.id!)
+    this.tasks.forEach(x=> {if(x.id==task.id) x.reminder=!x.reminder})
+  }
+
 }
