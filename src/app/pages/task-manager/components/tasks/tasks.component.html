@@ -1,4 +1,1 @@
-<app-task-item *ngFor="let task of tasks" [task]="task"></app-task-item>
-<app-button text="Add Dummy Task" color="green" (btnClick)="addDummyTask()">
-
-</app-button>
+<app-task-item *ngFor="let task of tasks" [task]="task" (deleteTaskEvent)="deleteTask(task)"></app-task-item>
