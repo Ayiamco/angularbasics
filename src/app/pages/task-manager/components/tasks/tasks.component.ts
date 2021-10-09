@@ -1,5 +1,5 @@
 import { ConstantPool } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ITask } from 'src/app/interfaces/ITask';
 import { TaskService } from 'src/app/services/task-service.service';
 
@@ -11,6 +11,7 @@ import { TaskService } from 'src/app/services/task-service.service';
 export class TasksComponent implements OnInit {
 
   tasks!:ITask[];
+  @Input() showAddTask=false;
   constructor(private taskService:TaskService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,8 @@ export class TasksComponent implements OnInit {
     })
   }
 
-  addTask(){
+  onAddTask(event:ITask){
+    console.log(event)
     var newTask:ITask={text:"THIS IS IT",day:"29TH ",reminder:true}
     this.taskService.addTask(newTask)
     this.taskService.getTasks().subscribe((resp)=>{
@@ -35,9 +37,7 @@ export class TasksComponent implements OnInit {
   handleToggleEvent(task:ITask){
     this.taskService.toggleTaskReminder(task.id!);
     this.tasks.forEach(x=> {if(x.id==task.id) x.reminder=!x.reminder});
-
-    console.log("Current tasks state: ",this.tasks)
-    
   }
+
 
 }

@@ -1,7 +1,6 @@
 <div class="container">
-    <app-add-task></app-add-task>
-    <app-header></app-header>
-    <app-tasks></app-tasks>
+    <app-header (toggleAddTaskForm)="handleToggleTask()"></app-header>
+    <app-tasks [showAddTask]="showAddTaskForm"></app-tasks>
 </div>
 
 

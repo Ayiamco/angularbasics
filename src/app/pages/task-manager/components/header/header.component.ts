@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   title:string='Task Manager';
+  toggleAddTaskForm= new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggleTask(){
-    console.log("Task Toggled!!!")
+ 
+  toggleTask(){ 
+    this.toggleAddTaskForm.emit();
+    console.log("header toggle hit")
   }
 }
