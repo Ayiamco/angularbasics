@@ -10,12 +10,14 @@ import { GithubComponent } from './pages/github/github.component';
 import { GuessGameComponent } from './pages/guess-game/guess-game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
     GuessGameComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
