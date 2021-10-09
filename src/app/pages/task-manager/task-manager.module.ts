@@ -14,6 +14,8 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskService } from 'src/app/services/task-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,13 +33,15 @@ const routes:Routes=[
     ButtonComponent,
     TaskItemComponent,
     TasksComponent,
+    AddTaskComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     FlexLayoutModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers:[TaskService]
 })
