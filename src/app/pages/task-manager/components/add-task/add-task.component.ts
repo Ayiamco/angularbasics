@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ITask } from 'src/app/interfaces/ITask';
 
 
@@ -12,27 +14,36 @@ export class AddTaskComponent implements OnInit {
   text:string="";
   reminder:boolean=false;
   day:string="";
+  newTaskData!:FormGroup
   @Input() showAddTask:boolean=false;
-
   @Output() addTask= new EventEmitter<ITask>();
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,private matsnackbar:MatSnackBar) { }
 
   ngOnInit(): void {
+   this.newTaskData= this.formBuilder.group({
+     "textCtrl":new FormControl("",[Validators.required]),
+     "dayCtrl": new FormControl("",[Validators.required]),
+     "reminderCtrl":new FormControl(false)
+   })
   }
 
-  onSubmit(){
-   //todo:Add form validation and snackbar for error display 
-  
-    this.addTask.emit({
-      text:this.text,
-      reminder:this.reminder,
-      day:this.day
-    })
+  onSubmit(){ 
+    if(!this.newTaskData.invalid){
+      this.addTask.emit({
+        text:this.newTaskData.controls["textCtrl"].value,
+        reminder:this.newTaskData.controls["reminderCtrl"].value,
+        day:this.newTaskData.controls["dayCtrl"].value
+      })
 
-    //reset state to default values
-    this.reminder=false;
-    this.text="";
-    this.day="";
+      //reset state to default values
+      this.reminder=false;
+      this.text="";
+      this.day="";
+    }
+    else{
+      this.matsnackbar.open("Error occured","Error")
+    }
   }
+    
 }

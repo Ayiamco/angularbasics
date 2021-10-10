@@ -15,7 +15,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskService } from 'src/app/services/task-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddTaskComponent } from './components/add-task/add-task.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 
 
@@ -41,7 +42,9 @@ const routes:Routes=[
     FlexLayoutModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers:[TaskService]
 })
