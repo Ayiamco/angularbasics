@@ -1,0 +1,179 @@
+.home-container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--clr-grey-1);
+    display: grid;
+  }
+  
+  .home-container header {
+    width: 100vw;
+    height: 30vh;
+    color: var(--clr-react);
+    text-align: center;
+    letter-spacing: var(--spacing);
+    background-color: rgb(20, 17, 17);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .home-container header::after,
+  .home-container header::before {
+    margin: none;
+    padding: none;
+  }
+  
+  .home-container h2 {
+    text-align: center;
+    letter-spacing: var(--spacing);
+    margin: 0px;
+    margin-top: 2em;
+    margin-bottom: 0px;
+  }
+  
+  #home-half-border {
+    border-top: 5px solid var(--clr-react);
+    width: 5em;
+    margin: auto;
+    margin-top: 7px;
+    margin-bottom: 2em;
+  }
+  
+  .exercise-card,
+  .external-card {
+    display: block;
+    width: calc(100% - 2em);
+    box-shadow: var(--dark-shadow);
+    padding: 0px;
+    margin: auto;
+    margin-top: 2em;
+    border-radius: 15px;
+    height: 40vh;
+    text-decoration: none;
+    color: var(--clr-primary-9);
+  }
+  
+  .exercise-card-img-container {
+    height: 70%;
+    min-width: 100%;
+    margin: none;
+    border-bottom: 1px solid gray;
+  }
+  
+  .exercise-card-img-container img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .exercise-card-title-container {
+    height: 30%;
+    min-width: 100%;
+    margin: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* external card styles */
+  .exercise-cards-container {
+    padding-bottom: 2em;
+  }
+  .external-card-img-container {
+    width: 100%;
+    border-bottom: 1px solid;
+    margin: auto;
+    height: 70%;
+  }
+  .external-card-img-container img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+  }
+  .external-card-img-container figcaption {
+    text-align: center;
+    font-family: "lato";
+    margin-top: 0.5em;
+  }
+  
+  .external-card-bt {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    background-color: white;
+  }
+  
+  .external-card-bt a {
+    text-decoration: none;
+    color: var(--clr-grey-9);
+    font-size: larger;
+  }
+  /* footer styles */
+  footer {
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+  }
+  footer p {
+    text-align: center;
+  }
+  
+  footer > p a {
+    color: gray;
+    text-decoration: none;
+  }
+  
+  footer > p a:hover {
+    color: blue;
+  }
+  footer > div a {
+    color: black;
+  }
+  footer > div a:hover {
+    color: rgb(87, 83, 83);
+  }
+  
+  @media only screen and (min-width: 700px) {
+    .flex-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      padding: 1em;
+      flex-wrap: wrap;
+    }
+    .exercise-card,
+    .external-card {
+      width: 343px;
+      height: 324px;
+      margin: 1em;
+      margin-top: 1.5em;
+    }
+    .exercise-cards-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0px 1.5em;
+    }
+  
+    /* footer styles */
+    footer i {
+      font-size: 2em;
+      margin: 0px 0.5em;
+    }
+    footer {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0.5em;
+    }
+  }
